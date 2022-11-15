@@ -56,13 +56,14 @@ body.wrong {
 }
 
 .btn:hover {
-boder-color: black;
+border-color: black;
 }
 
-.btn-correct {
+.btn.correct {
     --hue: var(--hue-correct);
+    color: black;
 }
 
-.btn-wrong {
+.btn.wrong {
     --hue: var(--hue-wrong);
 }
