@@ -1,5 +1,6 @@
 const questions = [
-    {
+    // This is where my questions are for the question class//
+    { 
          question : "What is an array?" ,
          answers: [
           { text: 'A list of objects' , correct: true },
@@ -22,7 +23,7 @@ const questions = [
     
 ];
 
-
+// Identifying the start and next button
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById
@@ -35,7 +36,7 @@ const answerButtonsElement = document.getElementById
 let shuffledQuestions; 
 let currentQuestionIndex = 0;
 
-
+// Event listener to run the start and next button//
 startButton.addEventListener('click', () => startGame());
 nextButton.addEventListener('click', () =>  {
     currentQuestionIndex++;
@@ -43,7 +44,7 @@ nextButton.addEventListener('click', () =>  {
 
 );
 
-
+// Function to run the start button//
 function startGame() {
     startButton.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.random() - .5);
@@ -52,12 +53,12 @@ function startGame() {
     setNextQuestion();
 }
 
-
+// Function to run the next question and reset it //
 function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
-
+// Tells us what to do if function is run and answer is correct//
 function showQuestion(question) {
     questionElement.innerText = question.question;
     questions.answers.forEach(answer => {
@@ -73,7 +74,7 @@ function showQuestion(question) {
     });
 
 }
-
+// Function to reset the answer button//
 function resetState() {
     clearStatusClass(document.body);
     nextButton.classList.add('hide');
@@ -82,7 +83,7 @@ function resetState() {
         (answerButtonsElement.firstChild);
     }
 }
-
+// Function to shuffle quetions//
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -97,7 +98,7 @@ function selectAnswer(e) {
         startButton.classList.remove('hide');
     }
 }
-
+// Function that disputes what will happen if answer is wrong or correct//
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
