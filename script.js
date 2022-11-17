@@ -1,26 +1,27 @@
-let questions = [
+const questions = [
     {
-         question: "What is 1 + 1?" ,
+         question : "What is an array?" ,
          answers: [
-          { text: '2' , correct: true },
-          { text: '3' , correct: false },
+          { text: 'A list of objects' , correct: true },
+          { text: 'A list of methods' , correct: false },
         ]
     } ,  {
-        question: "Which number is greater?" ,
+        question : "Can you use CSS to start a function?" ,
         answers: [
-         { text: '45' , correct: true },
-         { text: '9' , correct: false },
+         { text: 'No' , correct: true },
+         { text: 'Yes' , correct: false },
        ]
    } , {
-         question: "How many inches are in a foot?" ,
+         question : "What is a ReadMe?" ,
          answers: [
-          { text: '11' , correct: false },
-      { text: '12' , correct: true },
+          { text: 'It is when you judge your coding partner' , correct: false },
+          { text: 'It is a desciption file on a repository' , correct: true },
        ]
     }
   
     
 ];
+
 
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
@@ -50,6 +51,7 @@ function startGame() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
 }
+
 
 function setNextQuestion() {
     resetState();
